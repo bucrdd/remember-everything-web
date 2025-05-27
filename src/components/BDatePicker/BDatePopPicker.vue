@@ -1,37 +1,39 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import { useDate } from "vuetify";
 
 const dateAdapter = useDate();
-const menu = ref(false)
-const date = ref();
-const formatDate = computed(() => {
-  if (!date.value) return ''
-  return dateAdapter.format(date.value, "normalDate");
-})
+
+const menu = ref(false);
+
+const modelValue = defineModel();
+const date = ref(null);
+
 </script>
 
 <template>
   <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      transition="scale-transition"
-      location="bottom"
+    v-model="menu"
+    :close-on-content-click="false"
+    location="bottom"
+    transition="scale-transition"
+    width="100%"
   >
     <template v-slot:activator="{ props }">
     <v-text-field
-        v-model="formatDate"
-        label="Select date"
-        v-bind="props"
+      v-model="modelValue"
+      label="Select date"
+      v-bind="props"
+      width="100%"
     >
     </v-text-field>
     </template>
     <v-date-picker
-        v-model="date"
-        @update:model-value="menu = false"
-        show-adjacent-months
-        hide-header
+      v-model="date"
+      hide-header
+      show-adjacent-months
+      @update:model-value="menu = false"
     >
     </v-date-picker>
   </v-menu>
