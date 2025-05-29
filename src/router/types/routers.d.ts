@@ -1,4 +1,5 @@
 import "vue-router";
+import type { RouteRecordRaw } from "vue-router";
 
 declare module "vue-router" {
   interface RouteMeta {
@@ -10,14 +11,15 @@ declare module "vue-router" {
     hidden?: boolean;
     order?: number;
   }
+
+  interface AppRouteRecordRaw extends RouteRecordRaw {
+    path: string;
+    name?: string;
+    component?: Component | string;
+    meta?: RouteMeta;
+    redirect?: string;
+    children?: AppRouteRecordRaw[];
+    props?: boolean | Record<string, any> | ((to: RouteLocationNormalized) => Record<string, any>);
+  }
 }
 
-export interface AppRouteRecordRaw {
-  path: string;
-  name?: string;
-  component?: Component | string;
-  meta?: RouteMeta;
-  redirect?: string;
-  children?: AppRouteRecordRaw[];
-  props?: boolean | Record<string, any> | ((to: RouteLocationNormalized) => Record<string, any>);
-}

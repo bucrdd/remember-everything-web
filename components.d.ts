@@ -7,19 +7,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    BDatePickerBDatePopPicker: typeof import("./src/components/BDatePicker/BDatePopPicker.vue")["default"]
     BDatePopPicker: typeof import('./src/components/BDatePicker/BDatePopPicker.vue')['default']
     BPage: typeof import('./src/layout/BPage/BPage.vue')['default']
-    BPageBPage: typeof import("./src/layout/BPage/BPage.vue")["default"]
-    BSelectSheet: typeof import('./src/components/ BSelect/BSelectSheet.vue')['default']
+    BSelectSheet: typeof import('./src/components/BSelect/BSelectSheet.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
-    IconsIconCommunity: typeof import("./src/components/icons/IconCommunity.vue")["default"]
-    IconsIconDocumentation: typeof import("./src/components/icons/IconDocumentation.vue")["default"]
-    IconsIconEcosystem: typeof import("./src/components/icons/IconEcosystem.vue")["default"]
-    IconsIconSupport: typeof import("./src/components/icons/IconSupport.vue")["default"]
-    IconsIconTooling: typeof import("./src/components/icons/IconTooling.vue")["default"]
     IconSupport: typeof import('./src/components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
