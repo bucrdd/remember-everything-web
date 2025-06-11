@@ -22,4 +22,3 @@ declare module "vue-router" {
     props?: boolean | Record<string, any> | ((to: RouteLocationNormalized) => Record<string, any>);
   }
 }
-

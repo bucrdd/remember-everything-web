@@ -20,15 +20,9 @@ importers:
       pinia:
         specifier: ^2.3.1
         version: 2.3.1(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3))
-      sass:
-        specifier: ^1.89.0
-        version: 1.89.0
       vue:
         specifier: ^3.5.14
         version: 3.5.14(typescript@5.8.3)
-      vue-router:
-        specifier: ^4.5.1
-        version: 4.5.1(vue@3.5.14(typescript@5.8.3))
       vuetify:
         specifier: ^3.8.5
         version: 3.8.5(typescript@5.8.3)(vite-plugin-vuetify@2.1.1)(vue@3.5.14(typescript@5.8.3))
@@ -90,6 +84,9 @@ importers:
       prettier-eslint:
         specifier: ^16.4.2
         version: 16.4.2(typescript@5.8.3)
+      sass:
+        specifier: ^1.89.0
+        version: 1.89.0
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -111,6 +108,9 @@ importers:
       vue-eslint-parser:
         specifier: ^9.4.3
         version: 9.4.3(eslint@9.27.0)
+      vue-router:
+        specifier: ^4.5.1
+        version: 4.5.1(vue@3.5.14(typescript@5.8.3))
       vue-tsc:
         specifier: ^2.2.10
         version: 2.2.10(typescript@5.8.3)

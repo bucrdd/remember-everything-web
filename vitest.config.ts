@@ -2,7 +2,7 @@ import { fileURLToPath } from "node:url";
 import { configDefaults, defineConfig, mergeConfig } from "vitest/config";
 import viteConfig from "./vite.config";
 
-export default mergeConfig(
+const vitestConfig = mergeConfig(
   viteConfig,
   defineConfig({
     test: {
@@ -12,3 +12,6 @@ export default mergeConfig(
     },
   }),
 );
+
+console.log(`vitest: ${JSON.stringify(vitestConfig)}`);
+export default vitestConfig;

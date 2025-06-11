@@ -9,16 +9,15 @@ const defaults = ref({
   },
 });
 
-const modelValue = defineModel<ItemProp>();
+const modelValue = defineModel<ItemProp | unknown | null>();
 const props = withDefaults(defineProps<BSelectSheetProp>(), {
   maxHeight: "50vh",
 });
 
-const title = computed(() => props.title ? props.title : props.label ? props.label : "Select"
-);
+const title = computed(() => props.title ? props.title : props.label ? props.label : "Select");
 
 function onItemSelected(item: ItemProp) {
-  modelValue.value = item
+  modelValue.value = item;
   sheet.value = false;
 }
 
@@ -29,13 +28,13 @@ function onItemSelected(item: ItemProp) {
     <v-bottom-sheet v-model="sheet" inset>
       <template v-slot:activator="{ props: activatorProps }">
       <v-select
-        readonly
-        v-bind="activatorProps"
-        v-model="modelValue"
+        :item-title="props.itemTitle"
+        :item-value="props.itemValue"
         :label="props.label"
-        itemTitle="label"
-        item-value="value"
+        v-model="modelValue"
+        v-bind="activatorProps"
         :active="sheet"
+        readonly
         :menu-icon="sheet ? 'mdi-menu-up' : 'mdi-menu-down'"
       ></v-select>
       </template>
@@ -44,10 +43,10 @@ function onItemSelected(item: ItemProp) {
         <v-list>
           <v-list-subheader :title="title"></v-list-subheader>
           <v-list-item
-            v-for="option in props.options"
-            :key="option.value"
-            :title="option.label"
-            @click="onItemSelected(option)"
+            v-for="item in props.itmes"
+            :key="item"
+            :title="item.label"
+            @click="onItemSelected(item)"
           ></v-list-item>
         </v-list>
       </v-sheet>

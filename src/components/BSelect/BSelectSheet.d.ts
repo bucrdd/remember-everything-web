@@ -1,12 +1,11 @@
-export interface ItemProp {
-  label: string;
-  value: string;
-}
+export type ItemProp = unknown | null;
 
 export interface BSelectSheetProp {
-  options?: ItemProp[];
+  items?: ItemProp[];
   title?: string;
   label?: string;
+  itemTitle?: string;
+  itemValue?: string;
   maxHeight?: string | number | undefined;
 
   [key: string]: any;
