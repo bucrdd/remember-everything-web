@@ -1,4 +1,4 @@
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, URL } from "node:url";
 import { configDefaults, defineConfig, mergeConfig } from "vitest/config";
 import viteConfig from "./vite.config";
 
@@ -13,5 +13,4 @@ const vitestConfig = mergeConfig(
   }),
 );
 
-console.log(`vitest: ${JSON.stringify(vitestConfig)}`);
 export default vitestConfig;

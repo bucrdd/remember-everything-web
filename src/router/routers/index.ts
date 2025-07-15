@@ -1,5 +1,6 @@
-import bills from "./bills";
 import type { AppRouteRecordRaw } from "@/router/types/routers";
+import login from "./login";
+import bills from "./bills";
 
 const routers: AppRouteRecordRaw[] = [
   {
@@ -11,6 +12,7 @@ const routers: AppRouteRecordRaw[] = [
     path: "/test",
     component: () => import("@/views/TestPage.vue"),
   },
+  ...login,
   ...bills,
 
   // todo: 404 page

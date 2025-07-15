@@ -1,4 +1,7 @@
-export type ItemProp = unknown | null;
+export interface ItemProp {
+  label: string;
+  value: string;
+}
 
 export interface BSelectSheetProp {
   items?: ItemProp[];
