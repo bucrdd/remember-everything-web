@@ -4,13 +4,17 @@ export interface BPageProps {
   elevation?: string | number;
 }
 
-const props = defineProps<BPageProps>();
+const appTitle: string = import.meta.env.VITE_APP_TITLE;
+
+const props = withDefaults(defineProps<BPageProps>(), {
+  elevation: 2,
+})
 </script>
 
 <template>
   <v-app-bar
     :elevation="props.elevation"
-    :title="props.title"
+    :title="props.title ?? appTitle"
   >
     <template #prepend>
     <v-app-bar-nav-icon></v-app-bar-nav-icon>

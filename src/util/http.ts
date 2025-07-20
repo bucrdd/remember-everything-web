@@ -1,10 +1,5 @@
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
-import type {
-  AxiosInstance,
-  AxiosRequestConfig,
-  AxiosResponse,
-  InternalAxiosRequestConfig
-} from 'axios'
 
 interface ApiResponse<T = any> extends AxiosResponse {
   code: number;
@@ -52,8 +47,12 @@ class HttpClient {
         return response.data
       },
       (error) => {
-        // 统一处理HTTP错误
-        return Promise.reject(error)
+        console.log(error)
+        const response = error.response
+        if (response.status === 404) {
+          console.error(response)
+        }
+        return Promise.reject(response);
       }
     )
   }
